@@ -39,4 +39,13 @@ export class TasksComponent implements OnInit {
       this.ngOnInit();
     });
   }
+
+  handleChange(task: Task) {
+    this.tasksService.put(task).subscribe({
+      error: err => {
+        alert(err);
+        this.ngOnInit();
+      }
+    });
+  }
 }

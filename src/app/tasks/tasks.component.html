@@ -13,7 +13,6 @@
         {{isProcessing ? 'Processing...' : 'Add Task'}}
       </button>
     </div>
-
   </form>
 
   <div class="tasks">
@@ -23,7 +22,7 @@
         <span *ngIf="task.deadline">{{ task.deadline }}</span>
       </div>
       <div class="actions">
-        <input type="checkbox" />
+        <input type="checkbox" [(ngModel)]="task.completed" (change)="handleChange(task)" />
       </div>
     </div>
   </div>
