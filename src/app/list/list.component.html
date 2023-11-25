@@ -1,0 +1,30 @@
+<div class="border rounded p-4">
+  <h4>lista</h4>
+  <table>
+    <tr>
+      <th>
+        <input 
+          class="form-control" type="text"
+          [(ngModel)]="new_element"
+        >
+      </th>
+      <th>
+        <button 
+          class="btn btn-success"
+          (click)="addNewElement()"
+        >add!</button>
+      </th>
+    </tr>
+    <tr
+      *ngFor="let element of listed_elements; index as i"
+    >
+      <td>{{element}}</td>
+      <td>
+        <button
+          class="btn btn-outline-danger"
+          (click)="removeByIndex(i)"
+        >remove</button>
+      </td>
+    </tr>
+  </table>
+</div>

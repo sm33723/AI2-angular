@@ -1,0 +1,20 @@
+<div class="border p-4 mb-2 rounded">
+  <div>Random Component (max = {{this.max}})</div>
+  <span>
+    <button
+        class="btn btn-outline-secondary"
+        (click)="btnClick()"
+    >
+    pick!
+    </button>
+    random number is: {{this.random_number}} and it is
+    <span
+      class="red"
+      *ngIf="isSmallerThanHalf()"
+    >in lower half of random range</span>
+    <span
+      class="green"
+      *ngIf="!isSmallerThanHalf()"
+    >in upper half of random range</span>
+  </span>
+</div>
