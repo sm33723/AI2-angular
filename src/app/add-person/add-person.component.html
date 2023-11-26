@@ -1,0 +1,59 @@
+<form class="p-4 border rounded bg-body container">
+  <div class="mb-2">
+    <a class="btn btn-outline-secondary" [routerLink]="'/'"> &lt; back </a>
+  </div>
+
+  <div class="mb-2">
+    <label class="form-label" for="first_name">First Name</label>
+    <input class="form-control" 
+      type="text" id="first_name"
+      name="first_name" [(ngModel)]="person.first_name"
+    >
+  </div>
+
+  <div class="mb-2">
+    <label class="form-label" for="last_name">Last Name</label>
+    <input class="form-control" 
+      type="text" id="last_name" 
+      name="last_name" [(ngModel)]="person.last_name"
+    >
+  </div>
+
+  <div class="mb-2">
+    <label class="form-label" for="age">Age</label>
+    <input class="form-control" 
+      type="number" id="age"
+      name="age" min="1" max="130"
+      step="1" [(ngModel)]="person.age"
+    >
+  </div>
+
+  <hr>
+
+  <div class="address mb-2">
+    <div class="mb-2">
+      <label class="form-label" for="city">City</label>
+      <input class="form-control" type="text" id="city" name="city" [(ngModel)]="person.address.city">
+    </div>
+
+    <div class="mb-2">
+      <label class="form-label" for="street">Street</label>
+      <input class="form-control" type="text" id="street" name="street" [(ngModel)]="person.address.street">
+    </div>
+
+    <div class="mb-2">
+      <label class="form-label" for="post_code">post_code</label>
+      <input class="form-control" type="text" id="post_code" name="post_code" [(ngModel)]="person.address.post_code">
+    </div>
+  </div>
+
+  <hr>
+  
+  <button 
+    class="btn btn-success"
+    type="submit"
+    (click)="save()"
+  >
+    add
+  </button>
+</form>

@@ -1,0 +1,33 @@
+<div class="mb-2">
+  <a class="btn btn-outline-secondary" [routerLink]="'/'"> &lt; back </a>
+</div>
+
+<div *ngIf="person" class="p-4 border rounded bg-body">
+  <h4 class="mb-2 p-2">{{person.first_name}} {{person.last_name}}</h4>
+  <table class="table">
+    <tbody>
+      <tr *ngIf="person_id">
+        <th>id</th>
+        <td>{{person_id}}</td>
+      </tr>
+      <tr *ngIf="person.age">
+        <th>age</th>
+        <td>{{person.age}}</td>
+      </tr>
+    </tbody>
+    <tbody *ngIf="person.address">
+      <tr *ngIf="person.address.city">
+        <th>city</th>
+        <td>{{person.address.city}}</td>
+      </tr>
+      <tr *ngIf="person.address.street">
+        <th>street</th>
+        <td>{{person.address.street}}</td>
+      </tr>
+      <tr *ngIf="person.address.post_code">
+        <th>post_code</th>
+        <td>{{person.address.post_code}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

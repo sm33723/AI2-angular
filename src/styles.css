@@ -1,1 +1,30 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+  background: url("https://placehold.co/100x100/FFFFFF/EFEFEF/png?text=33723");
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  min-height: 100vh;
+}
+
+header{
+  margin: 0;
+  padding: 5pt;
+  width: 100%;
+  background-color: #999;
+  color: white;
+}
+
+main {
+  padding: 5pt;
+}
+
+footer{
+  color: white;
+  background-color: #373;
+  width: 100%;
+  padding: 2pt;
+  position: absolute;
+  bottom: 0;
+}
