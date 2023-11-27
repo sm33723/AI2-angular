@@ -1,0 +1,11 @@
+.done{
+  color: yellowgreen;
+  text-decoration: line-through;
+}
+.overdue{
+  color: red;
+}
+.overdue.done{
+  color: grey;
+}
+

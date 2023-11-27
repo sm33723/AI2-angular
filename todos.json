@@ -1,0 +1,18 @@
+{
+  "todos": [
+    {
+      "id": 3,
+      "title": "Hello World!",
+      "deadline": "2023-12-31",
+      "completed": false,
+      "archived": false
+    },
+    {
+      "title": "Test Task",
+      "deadline": "2023-11-10",
+      "archived": false,
+      "completed": true,
+      "id": 5
+    }
+  ]
+}

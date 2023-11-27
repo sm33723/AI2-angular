@@ -1,0 +1,81 @@
+<div class="border  rounded p-4 bg-body">
+  <h2 class="p-3">TODO list:</h2>
+
+  <form class="row my-3">
+    <div class="col-md-6 col-sm-12 mb-1">
+      <input
+        placeholder="new task"
+        id="task_title"
+        name="task_title"
+        class="form-control"
+        type="text"
+        [(ngModel)]="new_task.title"
+      >
+    </div>
+    <div class="col-md-4 col-sm-6 mb-1">
+      <input
+        id="task_deadline"
+        name="task_deadline"
+        class="form-control"
+        type="date"
+        [(ngModel)]="new_task.deadline"
+      >
+    </div>
+    <div class="col-md-2 col-sm-6 mb-1">
+      <button
+        class="btn btn-success w-100"
+        (click)="addNewTask()"
+      >
+        ADD
+      </button>
+    </div>
+  </form>
+
+  <div class="p-3">
+    <table class="table">
+      <tbody>
+        <tr>
+          <th> title </th>
+          <th> deadline </th>
+          <th> status </th>
+        </tr>
+
+        <tr
+          class="align-middle"
+          *ngFor="let task of tasks"
+        >
+          <td
+            [ngClass]="{
+              'done':task.completed,
+              'overdue':isOverdue(task)
+            }"
+          >{{task.title}}</td>
+          <td
+            [ngClass]="{
+              'done':task.completed,
+              'overdue':isOverdue(task)
+            }"
+          >{{task.deadline}}</td>
+          <td>
+            <input
+              class="form-check-input"
+              [(ngModel)]="task.completed"
+              (change)="updateTask(task)"
+              type="checkbox"
+            >
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="d-flex justify-content-end">
+      <a
+        class="btn btn-warning mx-2"
+        [routerLink]="'/archive'"
+      >archive</a>
+      <button
+        class="btn btn-outline-danger"
+        (click)="archiveCompleted()"
+      >archive done</button>
+    </div>
+  </div>
+</div>
