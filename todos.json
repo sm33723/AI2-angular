@@ -4,8 +4,8 @@
       "id": 1,
       "title": "Hello World",
       "deadline": "1900-01-01",
-      "completed": false,
-      "archived": false
+      "completed": true,
+      "archived": true
     },
     {
       "id": 2,
@@ -13,6 +13,13 @@
       "deadline": "2000-01-01",
       "completed": false,
       "archived": false
+    },
+    {
+      "title": "shopping",
+      "deadline": "2023-11-30",
+      "completed": true,
+      "archived": false,
+      "id": 3
     }
   ]
 }

@@ -31,3 +31,8 @@ header nav {
   display: flex;
   gap: 1em;
 }
+
+mat-toolbar mat-chip-listbox{
+  margin-right: 0;
+  margin-left: auto;
+}

@@ -41,6 +41,10 @@ export class TasksComponent implements OnInit {
     });
   }
 
+  canAddTask(){
+    return this.newTask.title === undefined;
+  }
+
   handleChange(task: Task) {
     this.tasksService.put(task).subscribe({
       error: err => {
@@ -65,5 +69,14 @@ export class TasksComponent implements OnInit {
     forkJoin(observables).subscribe(() => {
       this.ngOnInit();
     });
+  }
+
+  canArchiveCompleted(){
+    let doneTasks = this
+      .tasks
+      .filter((task,index)=>
+        task.completed == true
+      );
+    return doneTasks.length == 0;
   }
 }
